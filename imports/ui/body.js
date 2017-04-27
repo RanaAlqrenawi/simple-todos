@@ -4,9 +4,11 @@ import { Tasks } from '../api/tasks.js';
 
 import './body.html';
 
+import './task.js';
+
 Template.body.helpers({
   tasks() {
-    return Tasks.find({});
+    return Tasks.find({}, { sort: { createdAt: -1 } });
   },
 });
 
